@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        fetch("https://dummyjson.com/products")
+        .then(response => response.json())
+        // to print image
+        // .then((data) => document.write(`<img src=${data.products[0].images[0]}>`))
+        .then(data => document.write(
+  `<div style="width:160px; padding:10px; border:2px solid black; display:inline-block; text-align:center; margin:5px; background-color: lightgreen">
+     <img src="${data.products[0].images[0]}" style="width:150px;">
+   </div>`
+))
+
+        // .then((data) => document.write(JSON.stringify(data.products.map(product =><img src={product.images}/> ))))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <title>Products</title>
+// </head>
+// <body>
+//   <script>
+//     fetch("https://dummyjson.com/products")
+//       .then(res => res.json())
+//       .then(data => {
+//         data.products.forEach(p => 
+//           document.body.innerHTML += `<img src="${p.images[0]}" width="150">`
+//         );
+//       });
+//   </script>
+// </body>
+// </html> 
